@@ -37,12 +37,14 @@ public class MinMax {
         Pair mml = new Pair();
         Pair mmr = new Pair();
 
+        // len = 1
         if(low == high){
             minmax.min = arr[low];
             minmax.max = arr[low];
             return minmax;
         }
 
+        // len = 2
         if(low+1 == high){
             if(arr[low] > arr[high]){
                 minmax.min = arr[high];
@@ -55,6 +57,7 @@ public class MinMax {
             return minmax;
         }
 
+        // len > 2
         int mid = (low+high)/2;
 
         mml = binarySearch(arr, low, mid);
