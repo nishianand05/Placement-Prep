@@ -4,7 +4,7 @@ void merge(int arr[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
-    int arr1[n2], arr2[n2];
+    int arr1[100], arr2[100];
 
     for(int i=0; i<n1; i++){
         arr1[i] = arr[left + i];
@@ -44,7 +44,6 @@ void mergeSort(int arr[], int l, int r){
         int m = l+ (r-l) / 2;
         mergeSort(arr, l, m);
         mergeSort(arr, m+1, r);
-
         merge(arr, l, m, r);
     }
 }
